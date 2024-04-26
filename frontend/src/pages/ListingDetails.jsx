@@ -20,7 +20,7 @@ const ListingDetails = () => {
   const getListingDetails = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/properties/${listingId}`,
+        `http://localhost:3001/properties/₹{listingId}`,
         {
           method: "GET",
         }
@@ -84,7 +84,7 @@ const ListingDetails = () => {
       })
 
       if (response.ok) {
-        navigate(`/${customerId}/trips`)
+        navigate(`/₹{customerId}/trips`)
       }
     } catch (err) {
       console.log("Submit Booking Failed.", err.message)
@@ -106,7 +106,7 @@ const ListingDetails = () => {
         <div className="photos">
           {listing.listingPhotoPaths?.map((item) => (
             <img
-              src={`http://localhost:3001/${item.replace("public", "")}`}
+              src={`http://localhost:3001/₹{item.replace("public", "")}`}
               alt="listing photo"
             />
           ))}
@@ -124,7 +124,7 @@ const ListingDetails = () => {
 
         <div className="profile">
           <img
-            src={`http://localhost:3001/${listing.creator.profileImagePath.replace(
+            src={`http://localhost:3001/₹{listing.creator.profileImagePath.replace(
               "public",
               ""
             )}`}
@@ -167,15 +167,15 @@ const ListingDetails = () => {
               <DateRange ranges={dateRange} onChange={handleSelect} />
               {dayCount > 1 ? (
                 <h2>
-                  ${listing.price} x {dayCount} nights
+                  ₹{listing.price} x {dayCount} nights
                 </h2>
               ) : (
                 <h2>
-                  ${listing.price} x {dayCount} night
+                  ₹{listing.price} x {dayCount} night
                 </h2>
               )}
 
-              <h2>Total price: ${listing.price * dayCount}</h2>
+              <h2>Total price: ₹{listing.price * dayCount}</h2>
               <p>Start Date: {dateRange[0].startDate.toDateString()}</p>
               <p>End Date: {dateRange[0].endDate.toDateString()}</p>
 
