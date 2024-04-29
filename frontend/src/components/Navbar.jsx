@@ -7,7 +7,6 @@ import "../styles/Navbar.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { setLogout } from "../redux/state";
 
-
 const Navbar = () => {
   const [dropdownMenu, setDropdownMenu] = useState(false);
 
@@ -15,9 +14,9 @@ const Navbar = () => {
 
   const dispatch = useDispatch();
 
-  const [search, setSearch] = useState("")
+  const [search, setSearch] = useState("");
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div className="navbar">
@@ -32,11 +31,13 @@ const Navbar = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <IconButton disabled={search === ""}>
-          <Search
-            sx={{ color: variables.pinkred }}
-            onClick={() => {navigate(`/properties/search/${search}`)}}
-          />
+        <IconButton
+          disabled={search === ""}
+          onClick={() => {
+            navigate(`/properties/search/${search}`);
+          }}
+        >
+          <Search sx={{ color: variables.pinkred }} />
         </IconButton>
       </div>
 
