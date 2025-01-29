@@ -1,0 +1,19 @@
+name: "app"
+services:
+  fe:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+  mongodb:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+
+  be:
+    build: ./backend
+    ports:
+      - "3001:3001"
+      
+      
+
+
