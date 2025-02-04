@@ -32,7 +32,7 @@ CMD ["npm", "start"]
 
 # docker run -p 3000:3000 --name pehla_docker folder_appluxmi@Vivobook-ASUS:~/Desktop/docker_folder$ 
 
-
+##  docker exec -it ollama ollama run deepseek-r1:1.5b
 # docker exec -it <Container naam> <Command>
 
 # Run some commands inside docker container
