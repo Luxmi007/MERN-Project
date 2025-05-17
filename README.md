@@ -1,6 +1,6 @@
 # VACATION RENTALS - Project built using MERN Stack
 
-A full-stack web application built using the MERN stack: **MongoDB, Express.js, React, and Node.js**.
+A full-stack web application built using the MERN stack: **MongoDB, Express.js, React, SCSS, and Node.js**.
 
 ## Features
 
